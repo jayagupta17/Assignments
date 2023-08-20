@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  ul.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    overflow: hidden;
+  }
+
+  ul.navbar li {
+    float: left;
+  }
+
+  ul.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  ul.navbar li a:hover {
+    background-color: #555;
+  }
+
+  .content {
+    display: none;
+    padding: 20px;
+    background-color: #f2f2f2;
+  }
+
+  ul.navbar li:hover .content {
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<ul class="navbar">
+  <li>
+    <a href="#">Home</a>
+    <div class="content">One</div>    
+    <div class="content">Two</div>
+    <div class="content">Three</div>
+    <div class="content">Four</div>
+  </li>
+  <li>
+    <a href="#">About</a>
+    <div class="content">One</div>    
+    <div class="content">Two</div>
+    <div class="content">Three</div>
+    <div class="content">Four</div>
+  </li>
+  <li>
+    <a href="#">Services</a>
+    <div class="content">One</div>    
+    <div class="content">Two</div>
+    <div class="content">Three</div>
+    <div class="content">Four</div>
+  </li>
+  <li>
+    <a href="#">Contact</a>
+    <div class="content">One</div>    
+    <div class="content">Two</div>
+    <div class="content">Three</div>
+    <div class="content">Four</div>
+  </li>
+</ul>
+
+</body>
+</html>

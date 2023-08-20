@@ -1,0 +1,65 @@
+mysql> create table Course( id int, name text);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> desc Course;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| id    | int  | YES  |     | NULL    |       |
+| name  | text | YES  |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
+mysql> create table CourseCopy as select * from Course;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc CourseCopy;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| id    | int  | YES  |     | NULL    |       |
+| name  | text | YES  |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
+mysql> alter table Course add column duration int, add column fees double;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc Course;
++----------+--------+------+-----+---------+-------+
+| Field    | Type   | Null | Key | Default | Extra |
++----------+--------+------+-----+---------+-------+
+| id       | int    | YES  |     | NULL    |       |
+| name     | text   | YES  |     | NULL    |       |
+| duration | int    | YES  |     | NULL    |       |
+| fees     | double | YES  |     | NULL    |       |
++----------+--------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> alter table Course drop column duration, drop column fees;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc Course;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| id    | int  | YES  |     | NULL    |       |
+| name  | text | YES  |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> alter table Course rename column id to course_id;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc Course;
++-----------+------+------+-----+---------+-------+
+| Field     | Type | Null | Key | Default | Extra |
++-----------+------+------+-----+---------+-------+
+| course_id | int  | YES  |     | NULL    |       |
+| name      | text | YES  |     | NULL    |       |
++-----------+------+------+-----+---------+-------+
+2 rows in set (0.00 sec)

@@ -1,0 +1,27 @@
+mysql> create table department( dept_no int primary key, dept_name text, dept_location text);
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> desc department;
++---------------+------+------+-----+---------+-------+
+| Field         | Type | Null | Key | Default | Extra |
++---------------+------+------+-----+---------+-------+
+| dept_no       | int  | NO   | PRI | NULL    |       |
+| dept_name     | text | YES  |     | NULL    |       |
+| dept_location | text | YES  |     | NULL    |       |
++---------------+------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> create table employee( emp_no int primary key, emp_name text, emp_age int, emp_gender char(1), dept_no int, check( emp_age>=18 and emp_gender in('M','F')), foreign key(dept_no) references department(dept_no) on delete cascade);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> desc employee;
++------------+---------+------+-----+---------+-------+
+| Field      | Type    | Null | Key | Default | Extra |
++------------+---------+------+-----+---------+-------+
+| emp_no     | int     | NO   | PRI | NULL    |       |
+| emp_name   | text    | YES  |     | NULL    |       |
+| emp_age    | int     | YES  |     | NULL    |       |
+| emp_gender | char(1) | YES  |     | NULL    |       |
+| dept_no    | int     | YES  | MUL | NULL    |       |
++------------+---------+------+-----+---------+-------+
+5 rows in set (0.00 sec)

@@ -1,0 +1,18 @@
+Question 1:
+select emp_no,emp_name,emp_sal,d.dept_no,dept_name,dept_manager,d.address_id,city,state from department d,address a,employee e where d.dept_no=e.dept_no and d.address_id=a.address_id;
+
+
+
+
+
+Question 2:
+create table bankaccount( acc_no int primary key, acc_opened_date date, status text, balance double);
+create table transaction( acc_no int, trans_type text, trans_date date, trans_amount double, foreign key(acc_no) references bankaccount(acc_no) on delete cascade);
+
+
+
+
+
+Question 3:
+select manager_name,sum(emp_sal) from employee group by manager_name;
+select emp_sal from employee e1 where (select count(*) from employee e2 where e1.emp_sal<=e2.emp_sal)=4;

@@ -1,0 +1,187 @@
+First.html
+
+<html>
+    <head>
+        <title>Adding images</title>
+        <style>
+            img {
+                display: inline-block;
+                padding: 0%;
+                margin: 0%;
+            }
+            img:hover {
+                height: 60%;
+                width: 30%;
+            }
+        </style>
+    </head>
+    <body>
+            <img src="image.avif" alt="image">
+            <img src="image.avif" alt="image">
+            <img src="image.avif" alt="image">
+            <img src="image.avif" alt="image">
+    </body>
+</html>
+
+
+
+
+
+
+
+Second.html
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Page</title>
+        <style>
+            body {
+                text-align: center;
+                background-color: rgb(132, 154, 176);
+            }
+            table {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            td {
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Registration Form</h1>
+        <form >
+            <table>
+                <tr>
+                    <td><label>First Name</label></td>
+                    <td><input type="text" required></td>
+                </tr>
+                <tr>
+                    <td><label>Last Name</label></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><label>Mobile</label></td>
+                    <td><input type="tel" required></td>
+                </tr>
+                <tr>
+                    <td><label>Email</label></td>
+                    <td><input type="email" required></td>
+                </tr>
+                <tr>
+                    <td><label>Date of birth</label></td>
+                    <td><input type="date"></td>
+                </tr>
+                <tr>
+                    <td><label>Password</label></td>
+                    <td><input type="password" required></td>
+                </tr>
+                <tr>
+                    <td><label>Country</label></td>
+                    <td>
+                        <select name="Country" id="">
+                            <option value="Select">Select</option>
+                            <option value="India">India</option>
+                            <option value="Paris">Paris</option>
+                            <option value="Japan">Japan</option>
+                            <option value="China">China</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Qualifications</label></td>
+                    <td><div>
+                        <input type="checkbox" name="Qualifications">
+                        <label>High School</label><br>
+                        <input type="checkbox" name="Qualifications">
+                        <label>Intermediate</label><br>
+                        <input type="checkbox" name="Qualifications">
+                        <label>Bachelors</label><br>
+                        <input type="checkbox" name="Qualifications">
+                        <label>Masters</label>
+                    </div></td>
+                </tr>
+                <tr>
+                    <td><label>Gender</label></td>
+                    <td>
+                    <input type="radio" name="gender">
+                    <label>Male</label>
+                    <input type="radio" name="gender">
+                    <label>Female</label>
+                    <input type="radio" name="gender">
+                    <label>Other</label>
+                    </td>
+                </tr>
+            </table>
+            <button type="submit">Register</button>
+            <button type="reset">Cancel</button>
+        </form>
+    </body>
+</html>
+
+
+
+
+
+
+
+Third.html
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Table</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>S.No.</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>ABC</td>
+                <td>12</td>
+                <td>Male</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>BCD</td>
+                <td>16</td>
+                <td>Female</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>CDE</td>
+                <td>24</td>
+                <td>Female</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>DEF</td>
+                <td>21</td>
+                <td>Male</td>
+            </tr>
+        </table>
+    </body>
+</html>
+
+
+Third.css
+
+table {
+    background-color: lightgrey;
+    width: 50%;
+    border: 3px solid black;
+    border-collapse: collapse;
+}
+td {
+    text-align: center;
+}
+tr:hover {
+    background-color: darkgrey;
+}

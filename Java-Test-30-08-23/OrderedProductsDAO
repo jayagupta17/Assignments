@@ -1,0 +1,40 @@
+package org.example;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class OrderedProductsDAO {
+    private static String url = "jdbc:mysql://localhost:3306/gainsight";
+    public void displayOrderedProductsById(int prod_id)
+    {
+        try(Connection con = DriverManager.getConnection(url, "root", "Jg@12345");
+            PreparedStatement pst = con.prepareStatement("select p.prod_id, prod_name, prod_desc, prod_price, prod_quantity, o.order_date from product p,ordered_products op, orders o where op.prod_id = p.prod_id and op.order_id = o.order_id and op.prod_id = ?"))
+        {
+            pst.setInt(1, prod_id);
+            ResultSet rs = pst.executeQuery();
+            while(rs.next())
+                System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getString(3) + " " + rs.getDouble(4) + " " + rs.getInt(5) + " " + rs.getString(6));
+        }
+        catch(Exception ex)
+        {
+            ex.printStackTrace();
+        }
+    }
+    public void displayOrderedProductsByOrderDate(String order_date)
+    {
+        try(Connection con = DriverManager.getConnection(url, "root", "Jg@12345");
+            PreparedStatement pst = con.prepareStatement("select p.prod_id, prod_name, prod_desc, prod_price, prod_quantity, o.order_date from product p, ordered_products op, orders o where p.prod_id = op.prod_id and op.order_id = o.order_id and o.order_date = ?"))
+        {
+            pst.setString(1, order_date);
+            ResultSet rs = pst.executeQuery();
+            while(rs.next())
+                System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getString(3) + " " + rs.getDouble(4) + " " + rs.getInt(5) + " " + rs.getString(6));
+        }
+        catch(Exception ex)
+        {
+            ex.printStackTrace();
+        }
+    }
+}

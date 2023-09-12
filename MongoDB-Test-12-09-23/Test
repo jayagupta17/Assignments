@@ -1,0 +1,7 @@
+1. db.employees.insertOne({"Name": "John Smith", "Position": "Software Engineer", "Department": "Engineering", "Salary": 85000, "Hire Date": "2023-01-15"});
+2. db.employees.updateMany({"Position": "Software Engineer"},{$set:{"Salary" : 90000}});
+3. db.employees.find({$and: [{"Department": "Engineering"},{"Salary" : {$gt: 80000}}]});
+4. db.employees.deleteMany({"Department": "Marketing"});
+5. db.orders.aggregate([{$match:{$and: [{"order_date": {$gt: "2023-10-01"}},{"order_date": {$lt: "2023-12-31"}}]}},{$group:{_id: null, TotalRevenue: {$sum: "$total_price"}}}]);
+6. db.products.createIndex({product_code: 1});
+   db.products.getIndexes();
